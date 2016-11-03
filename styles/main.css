@@ -24,6 +24,11 @@ html {
      html { font-size: 120%; }
  }
 
+.container {
+     margin: 0 auto;
+     max-width: 64rem;
+ }
+
  *, *::before, *::after {
      -moz-box-sizing: border-box;
      -webkit-box-sizing: border-box;
@@ -45,7 +50,3 @@ html {
     left: 2rem;
 }
 
-.container {
-     margin: 0 auto;
-     max-width: 64rem;
- }

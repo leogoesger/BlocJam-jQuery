@@ -1,4 +1,4 @@
-Array.prototype.forEachNew = function(func){
+HTMLCollection.prototype.forEachNew = function(func){
     for (var i = 0; i < this.length; i++){
         func(this[i]);
     }

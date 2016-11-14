@@ -65,12 +65,23 @@ var createSongRow = function(songNumber, songName, songLength) {
  };
 
 var findParentByClassName = function(element, parent){
-    if (element) {
-    var c = element.parentElement;
-    while (c.className != parent && c.className !== null){
-        c = c.parentElement;
-    }
-    return c;
+    var all = document.getElementsByTagName("*");
+    var counter = 0;
+    for (var i = 1; i < all.length; i++){
+        if (all[i].className === parent){
+            counter++
+        }
+    };
+    if (counter > 0){
+        if (element) {
+            var c = element.parentElement;
+            while (c.className != parent && c.className !== null){
+                c = c.parentElement;
+            }
+            return c;
+        }
+    } else {
+        console.log('missing parent class')
     }
 };
 
@@ -79,6 +90,7 @@ var getSongItem = function(element) {
         case 'album-song-button':
         case 'ion-play':
         case 'ion-pause':
+            console.log(Object.getPrototypeOf(element));
             return findParentByClassName(element, 'song-item-number');
         case 'album-view-song-item':
             return element.querySelector('.song-item-number');

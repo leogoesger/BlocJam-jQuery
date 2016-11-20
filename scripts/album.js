@@ -40,7 +40,7 @@ var createSongRow = function(songNumber, songName, songLength) {
         var songNumber = parseInt(songNumberCell.attr('data-song-number'));
 
         if (songNumber !== currentlyPlayingSongNumber) {
-            songNumberCell.html(playButtonTemplate);
+            songNumberCell.html(playButtonTemplate); 
         }
     };
 
